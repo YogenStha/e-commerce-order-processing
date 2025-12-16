@@ -1,20 +1,35 @@
 {
-  "name": "real-time-order-processing-system",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "e-commerce-order-processing",
+  "version": "2.0.0",
+  "description": "Enterprise-grade order processing system with RabbitMQ and Redis",
+  "main": "src/api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:api": "node src/api/index.js",
+    "start:worker": "node src/worker/index.js",
+    "dev:api": "nodemon src/api/index.js",
+    "dev:worker": "nodemon src/worker/index.js",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
   },
-  "keywords": [],
+  "keywords": [
+    "ecommerce",
+    "order-processing",
+    "rabbitmq",
+    "redis",
+    "microservices"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "amqplib": "^0.10.9",
+    "dotenv": "^16.6.1",
     "express": "^5.2.1",
     "ioredis": "^5.8.2",
-    "nodemon": "^3.1.11",
-    "uuid": "^13.0.0"
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
